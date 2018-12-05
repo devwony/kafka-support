@@ -16,7 +16,7 @@ public class KafkaProducerMgr {
      */
     public KafkaFileProducer getKafkaFileProducer() {
         KafkaFileProducer kafkaFileProducer = new KafkaFileProducer();
-        kafkaFileProducer.setConfig(kafkaConfigMgr.getConfiguration());
+        kafkaFileProducer.setConfig(kafkaConfigMgr.getConfigForProducer());
 
         return kafkaFileProducer;
     }

@@ -20,7 +20,7 @@ public class KafkaProducerMgrTest {
 
         KafkaFileProducer kafkaFileProducer = kafkaProducerMgr.getKafkaFileProducer();
 
-        kafkaFileProducer.setFilePath("/home/wony/01.workspace/s-data/region.tbl");
+        kafkaFileProducer.setFilePath("/home/wony/01.workspace/s-data/orders.tbl");
 
         kafkaFileProducer.start("test-topic");
     }

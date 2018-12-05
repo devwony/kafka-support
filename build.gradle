@@ -23,11 +23,16 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+	compile.exclude group:'ch.qos.logback'
+}
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('org.springframework.kafka:spring-kafka')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	compile fileTree(dir: 'external/libs/jdbc', include: '*.jar')
 	compile('org.apache.kafka:kafka-streams:2.0.0')
 	compile('org.apache.kafka:kafka-clients:2.0.0')
 }
+

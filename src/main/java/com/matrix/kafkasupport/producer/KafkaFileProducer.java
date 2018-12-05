@@ -44,21 +44,17 @@ public class KafkaFileProducer extends KafkaCommProducerImpl {
              * send data
              */
             startTm = Instant.now();
-            //lines.forEach(text-> super.kafkaProducer.send( new ProducerRecord<String, String>(topic, text)) );
-
             lines.forEach(text->
-
                     {
                         try {
                             super.kafkaProducer.send( new ProducerRecord<String, String>(topic, text)).get();
-                            System.out.println(topic + "<---->" + text);
+                            //System.out.println(topic + "<---->" + text);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         }
                     }
-
             );
 
             lines.close();
